@@ -1,0 +1,167 @@
+ion-content {
+  background-color: #580808;
+  background-repeat: repeat-xy;
+  height: 100%;
+  margin: 0 0 0 0;
+  font-family: "architects";
+    --overflow: hidden;
+}
+
+ion-select {
+  margin: 10px auto 20px auto;
+  width: 300px;
+  font-family: "architects";
+  background-color: #fff;
+  border: 3px solid #000;
+  height: 35px;
+  width: 300px;
+  line-height: 20px;
+  font-size: 20px;
+}
+
+.main-Container {
+  background-color: #7e0c0c;
+  background-image: url("../../../assets/img/cb_background.png");
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-left: 3px solid #000;
+  border-right: 3px solid #000;
+  padding-top: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: block;
+}
+
+.imgBox {
+  width: 98vw;
+  margin: 0 auto;
+  color: #fff;
+  position: relative;
+}
+
+#thumbnail {
+  max-width: 80%;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 3px #000;
+  font-size: 2.5em;
+}
+
+.topCaption {
+  color: #fff;
+  text-shadow: #000 0px 0px 6px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+}
+
+#topText, #botText {
+  padding: 10px;
+}
+
+.gradient {
+  border: 3px solid #000;
+  height: 35px;
+  width: 300px;
+  line-height: 20px;
+  font-size: 20px;
+  background: -moz-linear-gradient(top, #fdca4b, #f8981d);
+}
+
+.topInpDiv,
+.botInpDiv,
+.imgInpDiv {
+  margin: 10px auto 20px auto;
+  width: 300px;
+  font-family: "architects";
+  padding-right: 20px !important;
+}
+
+@font-face {
+  font-family: "architects";
+  src: url("../../../assets/fonts/architects.ttf"); //mine
+}
+
+.kenburns-top {
+  -webkit-animation: kenburns-top 5s ease-out infinite both;
+  animation: kenburns-top 5s ease-out infinite both;
+}
+
+@-webkit-keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+    transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+    transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+}
+
+@keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+    transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+    transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+}
+
+.hero-bkg-animated {
+  background: gray url("../../../assets/img/cb_background.png") repeat 0 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-animation: slide 20s linear infinite;
+}
+
+@-webkit-keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -400px 0;
+  }
+}
+
+.bubble {
+  max-width: 500px;
+  margin: 2rem 0;
+  padding: 0.2rem 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+    #fff;
+  background-size: 12px, 100%;
+  border: 0.4rem solid #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble--highlight {
+  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.8" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23d68810"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+    #ffcd28;
+  background-size: 13px, 100%;
+  font-weight: 700;
+}

@@ -1,0 +1,56 @@
+<ion-content no>
+
+  <div class="main-Container hero-bkg-animated">
+
+    <h1 class="topCaption" id="topCap">Juego de movimiento kinético</h1>
+
+    <div class="imgBox">
+      <img id="thumbnail" src="../../../assets/img/logo.png">
+    </div>
+
+    <div class="textInputs">
+
+      <div class="cmTitle">
+        <h1>Iniciar sesión</h1>
+      </div>
+
+      <form [formGroup]="this.loginForm" (ngSubmit)="onLogin()">
+        <div class="topInpDiv">
+
+          <input id="topText" name="email" formControlName="email" class="gradient" type="text"
+            placeholder="Nombre de usuario">
+
+        </div>
+        <div class="botInpDiv">
+
+          <input id="botText" name="password" formControlName="password" class="gradient" type="password" placeholder="Contraseña">
+
+        </div>
+        <div class="imgInpDiv">
+
+          <div class="topInpDiv">
+            <ion-select [interfaceOptions]="opcionesDelActionSheet" interface="action-sheet"
+              placeholder="Seleccionar uno" cancel-text="Cancelar" (ionChange)="onChangeTestingUser($event)">
+              
+              <ion-select-option *ngFor="let unUsuarioTesting of testingUsers" value={{unUsuarioTesting.id}}>
+                {{ unUsuarioTesting.email }}
+              </ion-select-option>
+
+            </ion-select>
+          </div>
+
+          <div>
+            <div class="bubble bubble--highlight" (click)="onLogin()">
+              Entrar!
+            </div>
+          </div>
+
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+
+</ion-content>
