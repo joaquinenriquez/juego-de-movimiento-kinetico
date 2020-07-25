@@ -1,3 +1,4 @@
 export enum Collections {
-        score = 'puntaje_juego'
+        score = 'puntaje_juego',
+        Users = 'users'
 }

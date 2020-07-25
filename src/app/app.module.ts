@@ -1,3 +1,4 @@
+import { ScoreTableComponent } from './components/score-table/score-table.component';
 import { GameoverComponent } from './components/gameover/gameover.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,8 +20,8 @@ import { environment } from './../environments/environment';
 
 
 @NgModule({
-  declarations: [AppComponent, GameoverComponent],
-  entryComponents: [GameoverComponent],
+  declarations: [AppComponent, GameoverComponent, ScoreTableComponent],
+  entryComponents: [GameoverComponent, ScoreTableComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebaseConfig), AngularFireAuthModule],
   providers: [
     StatusBar,

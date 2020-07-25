@@ -5,6 +5,7 @@ import { FirebaseErrors } from '../../model/enums/firebase-errors.enum';
 import { DialogService } from 'src/app/services/dialog.service';
 import { User } from 'src/app/model/user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginPage implements OnInit {
 
   email: string;
   password: string;
+
   
   loginForm: FormGroup;
 
@@ -36,7 +38,8 @@ export class LoginPage implements OnInit {
   constructor(private authService: AuthService,
     private router: Router,
     private dialogService: DialogService,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private loadingController: LoadingController) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group(
@@ -52,7 +55,9 @@ export class LoginPage implements OnInit {
     this.password = this.loginForm.get("password").value;
 
     this.authService.onLogin(this.email, this.password).then(auth => {
-      this.router.navigateByUrl('/home');
+      this.showLoading();
+      setTimeout(() =>this.router.navigateByUrl('/home'), 2500); // hacemos una esperita para mostrar el bonito spiner que hicimos 
+      
     }).catch(error => {
       console.log(error);
       switch (error.code) {
@@ -89,6 +94,18 @@ export class LoginPage implements OnInit {
   }
 
 
+  async showLoading() {
+    const loading = await this.loadingController.create({
+      message: '<ion-img src="/assets/img/loading.gif" alt="loading..."></ion-img>',
+      cssClass: 'loading',
+      translucent: true,
+      showBackdrop: false,
+      spinner: null,
+      duration: 2500
+    });
+
+    loading.present();
+  }
 
 
   

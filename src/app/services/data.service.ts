@@ -43,7 +43,7 @@ export class DataService {
   }
 
   getAll2(collectionName: string): Observable<any[]> {
-    return this.db.collection(collectionName, ref => ref.orderBy('date')).valueChanges();
+    return this.db.collection(collectionName, ref => ref.orderBy('score', 'desc')).valueChanges();
   }
 
   getOne2(collectionName: string, documentId: string): Observable<any> {

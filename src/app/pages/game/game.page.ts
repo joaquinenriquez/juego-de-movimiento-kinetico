@@ -1,3 +1,4 @@
+import { AudioService } from './../../services/audio.service';
 import { Collections } from './../../model/enums/collections.enum';
 import { DataService } from './../../services/data.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -40,6 +41,8 @@ export class GamePage implements OnInit {
   hereoImgWidth: any;
   hereoImgHeight: any;
 
+  music = new Audio();
+
   heroe: Heroe = new Heroe();
 
   subscription: Subscription;
@@ -55,13 +58,21 @@ export class GamePage implements OnInit {
     private modalController: ModalController,
     private router: Router,
     private authService: AuthService,
-    private dataService: DataService) { }
+    private dataService: DataService, 
+    private audioService: AudioService) { }
 
   ngOnInit() {
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT); // Bloqueamos la pantalla para dejarla en vertical 
     this.ruta.queryParams.subscribe(parametrosGET => {
       this.heroe.name = parametrosGET["selectedHeroe"];
       this.heroe.img = `assets/img/${this.heroe.name}_game.png`
+      
+      if (this.heroe.name == 'superman') {
+        this.music = this.audioService.supermanMusic;
+      } else {
+        this.music = this.audioService.spidermanMusic;
+      }
+
     });
   }
 
@@ -132,9 +143,11 @@ export class GamePage implements OnInit {
 
   ngOnDestroy() {
     this.stopWatching();
+    this.audioService.stopAll();
   }
 
   gameOver() {
+    this.audioService.gameOver.play();
     this.timer.stop();
     this.stopWatching();
     this.saveScoreData();
@@ -152,6 +165,7 @@ export class GamePage implements OnInit {
   }
 
   restart() {
+    this.music.play();
     this.timer.reset();
     this.timer.start();
     this.goToStartPosition();
@@ -172,6 +186,8 @@ export class GamePage implements OnInit {
         this.restart();
       } else {
         this.router.navigateByUrl('/home');
+        this.music.pause();
+        this.audioService.introMusic.play();
       }
 
     }); 

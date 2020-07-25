@@ -1,0 +1,138 @@
+#divSuperPuesto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: greenyellow;
+}
+
+// #divSplash {
+//     --background: none;
+//     background: url("../assets/img/logoSplash.gif");
+//     background-size: cover;
+//     height: 100%;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+ 
+#escudo {
+    position: absolute; // Para poder posicionarlo donde queramos
+    width: 50%; // Valores iniciales
+    top: 100%; // Valores iniciales
+    left: 30%; // Valores iniciales
+    z-index: 100000; // Un valor alto hace que se oculte detras de todo
+
+    animation-name: volar; // Nombre de la animacion que le vamos a aplicar / crear
+    animation-duration: 15s; // Duracion del efecto: cuanto mas largo mas lento
+    
+}
+
+#spiderman {
+    position: absolute; // Para poder posicionarlo donde queramos
+    width: 50%; // Valores iniciales
+    top: 0%; // Valores iniciales
+    left: -50%; // Valores iniciales
+    z-index: 100000; // Un valor alto hace que se oculte detras de todo
+    animation-name: spiderman; // Nombre de la animacion que le vamos a aplicar / crear
+    animation-duration: 10s; // Duracion del efecto: cuanto mas largo mas lento
+    
+}
+
+#canvas {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../assets/img/splashbg2.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#nombreApp {
+
+    font-family: 'tituloApp';
+    color:white;
+    font-size: 2.2em;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    margin:1%;
+    animation-name: bajar;
+    animation-duration: 5s;
+}
+
+#alumnoDivision {
+    font-family: 'tituloApp';
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 2%;
+    left: 10%;
+    animation-name: subir;
+    animation-duration: 10s;
+}
+
+
+@font-face {
+    font-family: 'tituloApp';
+    src: url('../assets/fonts/architects.ttf');
+  }
+
+@keyframes zoomIn {
+
+    from {
+        position: absolute; // Para poder posicionarlo donde queramos
+        top: 0%;
+        left: 0%;
+        width: 100%;
+    }
+
+
+
+    to {
+        // margin-left: 0%;
+        // width: 100%;
+        // opacity: 1;
+    }
+
+}
+
+
+@keyframes bajar 
+{
+    from {
+        top:0px;
+    }
+}
+
+@keyframes subir
+{
+    from {
+        bottom:-10%;
+    }
+}
+
+
+@keyframes volar
+{
+    from {
+        bottom:-10%;
+    } to {
+        top: -100%;
+    }
+}
+
+@keyframes spiderman
+{
+    from {
+        bottom:150%;
+        left: 0%;
+    } to {
+        top: 60%;
+        left: 140%;
+    }
+}

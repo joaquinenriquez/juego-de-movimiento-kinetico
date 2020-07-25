@@ -1,3 +1,4 @@
+import { AudioService } from './../../services/audio.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
@@ -9,7 +10,8 @@ import { NavigationExtras } from '@angular/router';
 })
 export class SelectPlayerPage implements OnInit {
 
-  constructor(private navController: NavController) { }
+  constructor(private navController: NavController,
+    private audioService: AudioService) { }
 
   ngOnInit() {
   }
@@ -21,6 +23,8 @@ export class SelectPlayerPage implements OnInit {
         selectedHeroe: heroeName //JSON.stringify(idioma),
       }
     };
+
+    this.audioService.introMusic.pause();
 
     this.navController.navigateForward('game', parametrosGET);
   }

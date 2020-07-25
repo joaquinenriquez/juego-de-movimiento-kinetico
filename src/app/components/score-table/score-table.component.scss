@@ -1,0 +1,62 @@
+#canvas {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../../assets/img/cb_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+    color: lightblue;
+    font-size: 2.5em;
+    font-family: "Dekko", cursive;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+
+
+.bubble {
+    width: 90%;
+    margin: 1rem 0;
+    padding: 0.2rem 1.25rem;
+    text-align: center;
+    font-family: "Dekko", cursive;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'), #fff;
+    background-size: 12px, 100%;
+    border: 0.4rem solid #000;
+    position:absolute;
+    background: rgba(0,0,0,0);
+    color: wheat;
+    min-height: 4em;
+  }
+
+  .bubble--highlight-1 {
+    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.8" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23d68810"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+      green;
+    background-size: 13px, 100%;
+    font-weight: 700;
+    top: 20%;
+    left: 6%;
+  }
+
+  .bubble--highlight-2 {
+    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.8" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23d68810"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+      orange;
+    background-size: 13px, 100%;
+    font-weight: 700;
+    top: 45%;
+    left: 6%;
+  }
+
+  .bubble--highlight-3 {
+    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.8" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23d68810"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+      violet;
+    background-size: 13px, 100%;
+    font-weight: 700;
+    top: 70%;
+    left: 6%;
+  }
